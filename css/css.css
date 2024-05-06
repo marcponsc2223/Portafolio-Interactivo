@@ -2,6 +2,8 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-y:hidden;
+
     overflow-x: hidden; /* Oculta el desplazamiento vertical del documento */
 }
 
@@ -9,7 +11,7 @@ body, html {
     width: 100%; /* Ancho total del contenido */
     height: 100%;
     overflow-x: hidden; 
-    overflow-y:visible;
+    overflow-y: hidden;
     white-space: nowrap; /* Evita el salto de línea */
 }
 
@@ -21,7 +23,9 @@ body, html {
 }
 
 
-
+.herb, .ground, .trees, .clouds {
+    position: relative;
+}
 .m1 {
     background-color: #73CDFF;   
 }
