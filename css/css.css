@@ -1,0 +1,33 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Oculta el desplazamiento vertical del documento */
+}
+
+.container {
+    width: 100%; /* Ancho total del contenido */
+    height: 100%;
+    overflow-x: hidden; 
+    overflow-y:visible;
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+.section {
+    width: 100vw; /* Ancho igual al ancho de la ventana */
+    height: 100%;
+    display: inline-block; /* Permite que las secciones se muestren en línea */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+
+
+.m1 {
+    background-color: #73CDFF;   
+}
+.m2 {
+    background-color: #000000;
+} 
+.m3 {
+    background-color: #F3D094;
+}
