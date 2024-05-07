@@ -1,3 +1,8 @@
+.texto-trispace {
+    color: #DB2E23;
+    font-weight: 100;
+    font-family: 'Trispace', sans-serif !important;
+}
 body, html {
     margin: 0;
     padding: 0;
@@ -16,14 +21,14 @@ body, html {
 }
 
 .section {
-    width: 100vw; /* Ancho igual al ancho de la ventana */
+    width: 500%; /* Ancho igual al ancho de la ventana */
     height: 100%;
     display: inline-block; /* Permite que las secciones se muestren en línea */
     font-size: 16px; /* Tamaño de fuente */
 }
 
 
-.herb, .ground, .trees, .clouds {
+.herb, .ground, .trees, .clouds, .mountains, .title, .title2 {
     position: relative;
 }
 .m1 {
@@ -35,3 +40,75 @@ body, html {
 .m3 {
     background-color: #F3D094;
 }
+
+.title {
+    left: 3%;
+    top: 340px;
+}
+.title2 {
+    left: 13%;
+    top: 340px;
+}
+.titleImg {
+    width: 500px;
+    position: absolute;
+}
+.textTitle1 {
+    left: 23px;
+    position: absolute;
+    top: 90px;
+}
+.scrollDown {
+    left: 149px;
+    position: absolute;
+    top: 420px;
+}
+
+.arrow,
+.arrow:before{
+    position: absolute;
+    left: 50%;
+}
+.arrow{
+    width: 23px;
+    height: 24px;
+    top: 443px;
+    position: absolute;
+    left: 292px;
+    margin: -20px 0 0 -20px;
+    -webkit-transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 2px #DB2E23 solid;
+    border-bottom: 2px #DB2E23 solid;
+}
+.arrow2{
+    left: 129px;
+}
+.arrow:before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    margin: -10px 0 0 -10px;
+    border-left: none;
+    border-top: none;
+    border-right: 1px #DB2E23 solid;
+    border-bottom: 1px #DB2E23 solid;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: arrow;
+}
+@keyframes arrow{
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-10px, -10px);
+    }
+}
+  
+  
+  
+  
