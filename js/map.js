@@ -8,19 +8,27 @@ const HERB_WIDTH = 100
 const TREE_HEIGHT = 413
 const TREE_WIDTH = 310
 const MOUNTAIN_HEIGHT = 293
+let cloudsArray = []
+let cloudsPositionX = []
+let cloudsPositionY = []
 
 drawMap()
 function draw() {
-    
+    for (let i = 0; i < cloudsArray.length; i++) {
+        cloudsArray[i].style.left = cloudsPositionX[i] + 'px'
+        cloudsArray[i].style.top = cloudsPositionY[i] + 'px'
+    }
 }
 function update() {
     draw()
+
 }
 
 function animate() {
     requestAnimationFrame(animate)
     update()
 }
+animate()
 function drawMap() {
     map = showMap1()
     // DIBUJAR MAPA.
@@ -34,13 +42,11 @@ function drawMap() {
                 document.querySelector('.ground').appendChild(groundBlock)
                 groundBlock.classList.add('suelo')
                 groundBlock.style.backgroundColor = '#E2A23E'
-                // groundBlock.style.backgroundSize = 'cover'
                 groundBlock.style.top = fila * BLOCK_SIZE + 'px'
                 groundBlock.style.left = (columna * BLOCK_SIZE) + 'px'
                 groundBlock.style.width =  100 + '%'
                 groundBlock.style.height = BLOCK_HEIGHT + 'px'
                 groundBlock.style.position = 'absolute'
-                // COLLIDABLE.push(groundBlock)
             
             } else if (map[fila][columna] === 2) {
                 const trees = document.createElement('div');
@@ -59,7 +65,6 @@ function drawMap() {
                 trees.style.width = TREE_WIDTH + 'px';
                 trees.style.height = TREE_HEIGHT + 'px';
                 trees.style.position = 'absolute';
-                // COLLIDABLE.push(mapBlock2);
                 } else if (map[fila][columna] === 3) {
                 const clouds = document.createElement('div')
 
@@ -71,9 +76,9 @@ function drawMap() {
                 clouds.style.width =  CLOUD_WIDTH + 'px'
                 clouds.style.height = CLOUD_HEIGHT + 'px'
                 clouds.style.position = 'absolute'
-                // COLLIDABLE_FINAL_LEVEL1.push(mapBlock3)
-                // COLLIDABLE.push(mapBlock3)
-
+                cloudsArray.push(clouds)
+                cloudsPositionX.push(parseInt(clouds.style.left.replace('px', '')))
+                cloudsPositionY.push(clouds.style.top.replace('px', ''))
             } 
             else if (map[fila][columna] === 4) {
                 const herb = document.createElement('div')
@@ -95,7 +100,6 @@ function drawMap() {
                 const mountain = document.createElement('div')
 
                 document.querySelector('.mountains').appendChild(mountain)
-                // mountain.style.zIndex = 2
                 mountain.style.backgroundImage = 'url(../img/mountain.png)'
                 mountain.style.backgroundSize = 'cover'
                 mountain.style.top = fila * BLOCK_SIZE + 'px'
@@ -103,8 +107,6 @@ function drawMap() {
                 mountain.style.width =  TREE_WIDTH + 'px'
                 mountain.style.height = MOUNTAIN_HEIGHT + 'px'
                 mountain.style.position = 'absolute'
-                // COLLIDABLE_FINAL_LEVEL1.push(mapBlock3)
-                // COLLIDABLE.push(mapBlock3)
 
             } 
 
