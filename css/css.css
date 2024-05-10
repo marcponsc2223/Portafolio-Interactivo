@@ -28,24 +28,62 @@ body, html {
 }
 
 
-.herb, .ground, .trees, .mountains, .title, .title2 {
+.ground, .trees, .mountains, .title, .title2, .clouds, .sagradaFamilia, .grass, .barcelona, .fanVideogames, .designFrontEnd {
     position: relative;
 }
-.containerClouds {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Ajusta según sea necesario */
-    overflow-x: hidden;
+
+.allContainersTitles {
+    width: 0;
+    display: grid;
+    justify-items: center;
+    z-index: 1;
+    top: 440px;
 }
-.clouds {
+.sagradaFamilia {
+    left: 2400px;
+}
+.fanVideogames {
+    left: 3735px;
+}
+.designFrontEnd {
+    left: 5125px;
+}
+#js{
+    left: -250px;
+    bottom: -351px;
+    width: 70px;
+}
+#css {
+    left: 170px;
+    top: 221px;
+    width: 520px;
+}
+
+#tv {width: 600px;}
+.barcelonaTitle {
+    width: 680px;
+    bottom: 60px;
+}
+.imgsMap1 {
+    z-index: 1;
     position: absolute;
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
+}
+#mario {
+    left: 2950px;
+    top: 806px;
+    width: 91px;
+}
+#kratos {
+    width: 100px;
+    left: 4200px;
+    top: 806px;
+}
+.grass {
+    width: 100%;
 }
 .m1 {
-    background-color: #00BFF3;
-    /* background-color: #73CDFF;    */
+    /* background-color: #00BFF3; */
+    background-color: #73CDFF;   
 }
 .m2 {
     background-color: #000000;
