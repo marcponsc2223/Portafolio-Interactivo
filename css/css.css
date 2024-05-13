@@ -21,14 +21,15 @@ body, html {
 }
 
 .section {
-    width: 500%; /* Ancho igual al ancho de la ventana */
+    width: 370%; /* Ancho igual al ancho de la ventana */
     height: 100%;
-    display: inline-block; /* Permite que las secciones se muestren en línea */
+    display: inline-table;
+    /* display: inline-block; */
     font-size: 16px; /* Tamaño de fuente */
 }
 
 
-.ground, .trees, .mountains, .title, .title2, .clouds, .sagradaFamilia, .grass, .barcelona, .fanVideogames, .designFrontEnd {
+.ground, .trees, .mountains, .title, .title2, .clouds, .sagradaFamilia, .grass, .barcelona, .fanVideogames, .designFrontEnd, .ap, .portals {
     position: relative;
 }
 
@@ -47,6 +48,13 @@ body, html {
 }
 .designFrontEnd {
     left: 5125px;
+}
+.ap {
+    left: 6525px;
+}
+.apTitle {
+    bottom: 60px;
+    width: 860px;
 }
 #js{
     left: -250px;
@@ -69,11 +77,13 @@ body, html {
     position: absolute;
 }
 #mario {
+    z-index: 2;
     left: 2950px;
     top: 806px;
     width: 91px;
 }
 #kratos {
+    z-index: 2;
     width: 100px;
     left: 4200px;
     top: 806px;
@@ -97,7 +107,7 @@ body, html {
     top: 340px;
 }
 .title2 {
-    left: 13%;
+    left: 16%;
     top: 340px;
 }
 .titleImg {
