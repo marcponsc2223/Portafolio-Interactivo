@@ -1,3 +1,4 @@
+
 .texto-trispace {
     color: #DB2E23;
     font-weight: 100;
@@ -31,7 +32,7 @@ body, html {
 }
 
 
-.ground, .trees, .mountains, .title, .title2, .clouds, .sagradaFamilia, .grass, .barcelona, .fanVideogames, .designFrontEnd, .ap, .portals, .crater, .moon, .asteroids, .portalsMoon {
+.containers {
     position: relative;
 }
 
@@ -42,6 +43,8 @@ body, html {
     z-index: 1;
     top: 440px;
 }
+
+
 .sagradaFamilia {
     left: 2400px;
 }
@@ -71,13 +74,107 @@ body, html {
 
 #tv {width: 600px;}
 .barcelonaTitle {
-    width: 680px;
+    width: 602px;
     bottom: 60px;
 }
 .imgsMap1 {
     z-index: 1;
     position: absolute;
 }
+.alien {
+    z-index: 2;
+    top: 150px;
+    left: 0;
+}
+.earth {
+    z-index: 0;
+    bottom: -145px;
+    left: 100px;
+}
+.cable {
+    z-index: 1;
+    left: 267px;
+    position: absolute;
+    width: 170px;
+    top: 256px;
+}
+.spaceFlagsIcons {
+    border-radius: 20px;
+    top: -160px;
+    left: 440px;
+    background-color: #597A53;
+    position: absolute;
+    height: 289px;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconsWorks {
+    border-radius: 20px;
+    padding: 10px;
+    border: 5px solid transparent;
+}
+.iconsWorks:hover {
+    cursor: pointer;
+    animation: border_illuminate 2s linear infinite;
+}
+#vueIcon {
+    margin-left: 10px;
+}
+#nassaIcon {
+    width: 70px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+.flagsTitle {
+    top: 20px;
+    position: absolute;
+}
+
+.tooltip {
+    visibility: hidden;
+    /* display: none; */
+    text-align: center;
+    width: 310px;
+    position: absolute;
+    bottom: 157px;
+    left: 55%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 19px;
+    opacity: 0;
+    white-space: normal;
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    z-index: 20;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.image-wrapper:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+.textLabel {
+    margin: 10px;
+    line-height: 1.2;
+    text-align: justify;
+}
+
+.labelImgs {
+    max-height: 169px;
+    width: 300px;
+    max-width: 300px;
+    border-radius: 30px;
+}
+.imageWithLink:hover {
+    cursor: pointer;
+}
+
 #mario {
     z-index: 2;
     left: 2950px;
@@ -174,7 +271,24 @@ body, html {
         transform: translate(-10px, -10px);
     }
 }
-  
+
+@keyframes border_illuminate {
+    0% {
+        border-color: transparent;
+    }
+    25% {
+        border-top-color: rgba(15, 58, 151, 0.8);
+    }
+    50% {
+        border-right-color: rgba(15, 58, 151, 0.8);
+    }
+    75% {
+        border-bottom-color: rgba(15, 58, 151, 0.8);
+    }
+    100% {
+        border-left-color: rgba(15, 58, 151, 0.8);
+    }
+}
   
   
   
