@@ -98,6 +98,11 @@ body, html {
     width: 170px;
     top: 256px;
 }
+.cable2 {
+    width: 278px;
+    top: -38px;
+    left: 1140px;
+}
 .spaceFlagsIcons {
     border-radius: 20px;
     top: -160px;
@@ -109,6 +114,9 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.flag2 {
+    left: 1420px;
 }
 .iconsWorks {
     border-radius: 20px;
