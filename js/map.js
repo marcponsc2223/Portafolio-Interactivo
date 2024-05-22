@@ -15,7 +15,7 @@ const ASTEROID_HEIGHT = 174
 let m1 = document.getElementById('m1')
 let m2 = document.getElementById('m2')
 m1.style.width = 155 * 47 + 'px'
-m2.style.width = 100 * 47 + 'px'
+// m2.style.width = 100 * 47 + 'px'
 var cloudsArray = []
 let cloudsPositionX = []
 let cloudsPositionY = []
@@ -40,17 +40,25 @@ animate()
 function drawMap() {
     map = showMap1()
     moonMap = showMap2()
+    desertMap = showMap3()
     // DIBUJAR MAPA.
     for (let fila = 0; fila < map.length; fila++) {
         for (let columna = 0; columna < map[fila].length; columna++) {
             drawMap1(map, fila, columna)
-        }
-    }
-    for (let fila = 0; fila < moonMap.length; fila++) {
-        for (let columna = 0; columna < moonMap[fila].length; columna++) {
             drawMap2(moonMap, fila, columna)
+            // drawMap3(desertMap, fila, columna)
         }
     }
+    // for (let fila = 0; fila < moonMap.length; fila++) {
+    //     for (let columna = 0; columna < moonMap[fila].length; columna++) {
+    //         drawMap2(moonMap, fila, columna)
+    //     }
+    // }
+    for (let fila = 0; fila < desertMap.length; fila++) {
+            for (let columna = 0; columna < desertMap[fila].length; columna++) {
+                drawMap3(desertMap, fila, columna)
+            }
+        }
 }
 
 function drawMap1(map, fila, columna) {
@@ -185,6 +193,50 @@ function drawMap2(map, fila, columna) {
 
     }
 }
+function drawMap3(map, fila, columna) {
+    if (map[fila][columna] === 1) {
+        const groundBlock = document.createElement('div')
+
+        document.querySelector('.desertGround').appendChild(groundBlock)
+        groundBlock.classList.add('suelo')
+        groundBlock.style.zIndex = 1
+        // groundBlock.style.backgroundImage = 'url(../img/moon.jpg)'
+        groundBlock.style.backgroundColor = '#FEB36D'
+        groundBlock.style.top = fila * BLOCK_SIZE + 'px'
+        groundBlock.style.left = (columna * BLOCK_SIZE) + 'px'
+        groundBlock.style.width =  100 + '%'
+        groundBlock.style.height = BLOCK_HEIGHT + 'px'
+        groundBlock.style.position = 'absolute'
+    
+    } else if (map[fila][columna] === 3) {
+        const clouds = document.createElement('div')
+
+        document.querySelector('.cloudsDesert').appendChild(clouds)
+        clouds.style.zIndex = 2
+        clouds.style.backgroundImage = 'url(../img/cloud.png)'
+        clouds.style.backgroundSize = 'cover'
+        clouds.style.top = fila * BLOCK_SIZE + 'px'
+        clouds.style.left = (columna * BLOCK_SIZE) + 'px'
+        clouds.style.width =  CLOUD_WIDTH + 'px'
+        clouds.style.height = CLOUD_HEIGHT + 'px'
+        clouds.style.position = 'absolute'
+    } 
+    else if (map[fila][columna] === 4) {
+        const crater = document.createElement('div')
+
+        document.querySelector('.sand').appendChild(crater)
+        crater.style.zIndex = 3
+        crater.style.backgroundColor = '#E08D3F'
+        // grass.style.backgroundImage = 'url(../img/moon.jpg)'
+        // grass.style.backgroundSize = 'cover'
+        crater.style.top = 888 + 'px'
+        crater.style.left = (columna * BLOCK_SIZE) + 'px'
+        crater.style.width =  GRASS_WIDTH + '%'
+        crater.style.height = GRASS_HEIGHT + 'px'
+        crater.style.position = 'absolute'
+
+    }
+}
 function showMap1() {
     return [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -239,6 +291,36 @@ function showMap2() {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [4],
+        [1]
+    ]
+}
+
+function showMap3() {
+    return [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
         [4],
         [1]
     ]

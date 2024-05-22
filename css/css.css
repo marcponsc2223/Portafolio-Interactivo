@@ -149,6 +149,10 @@ body, html {
 .flag3 {
     left: 2400px;
 }
+.titleForm {
+    left: 590px;
+    top: 190px;
+}
 .iconsWorks {
     border-radius: 20px;
     padding: 10px;
@@ -178,7 +182,12 @@ body, html {
     top: 20px;
     position: absolute;
 }
-
+.piramid {
+    z-index: 0;
+    left: 69px;
+    width: 500px;
+    top: 544px;
+}
 .tooltip {
     visibility: hidden;
     /* display: none; */
@@ -246,6 +255,7 @@ body, html {
     background-color: #000000;
 } 
 .m3 {
+    width: 1740px !important;
     background-color: #F3D094;
 }
 
