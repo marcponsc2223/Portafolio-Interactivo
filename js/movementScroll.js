@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     let container = document.querySelector('.container')
-    // let m1 = document.getElementById('m1')
+    let m1 = document.getElementById('m1')
     var initialCloudsPositionX = []
     var isScrollingLeft = false 
-    
     // let scrollTop = false
 
     // Registra la posición inicial de las nubes
@@ -14,9 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     container.addEventListener("wheel", function(event) {
         var scrollAmount = event.deltaY;
         container.scrollLeft += scrollAmount;
-        this.scrollLeft += event.deltaY;
 
-       
         // Verificar si estamos al principio de la página y hacemos scroll hacia la izquierda
         if (container.scrollLeft <= 0 && scrollAmount < 0) {
             cloudsPositionX.forEach(function(x, index) {
