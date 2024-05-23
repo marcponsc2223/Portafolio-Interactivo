@@ -318,6 +318,22 @@ body, html {
     animation-iteration-count: infinite;
     animation-name: arrow;
 }
+.contactImgs{
+    top: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.iconsContact {
+    margin: 0 10px;
+    width: 60px;
+    transition: 0.5s;
+    filter: contrast(0.5);
+}
+.iconsContact:hover {
+    filter: none;
+  transform: scale(1.05);
+}
 .sendEmailError {
     display: none;
     font-size: 20px;
