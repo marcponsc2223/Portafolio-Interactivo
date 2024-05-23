@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <title>Interactive Portfolio Marc Pons</title>
     </head>
-    <body>
+    <body id="body">
     
     <div class="container" id="container">
         <div class="section m1" id="m1">
@@ -147,17 +147,31 @@
             <div class="containers"><div class="portals portalMoon"></div></div>
         </div>
         <div class="section m3" id="m3">
-            <div class="contactWithMe containers"><img src="./img/contactWithMe.png" alt="contactWithMe.png" class="imgsMap1 titleForm"></div>
+            <div class="contactWithMe containers"><img src="./img/contactWithMe.png" alt="contactWithMe.png" class="imgsMap1 titleForm"></div>            
             <div class="desertGround containers"></div>
             <div class="sand containers"></div>
             <div class="cloudsDesert containers"></div>
             <div class="piramidC containers"><img src="./img/piramid.png" alt="piramid.png" class="imgsMap1 piramid"></div>
+            <div class="palms containers"></div>
+            <div class="piramids containers"></div>
+            <div class="contact-us">
+                <form id="form">
+                  <input placeholder="Your Email" type="email" name="from_name" id="from_name" required>
+                  <input placeholder="Subject" type="text" name="subject_id" id="subject_id" required>
+                  <textarea placeholder="Message" name="message" rows="5" required></textarea>
+                  <button type="submit" id="button">SEND MESSAGE</button>
+                </form>
+            </div>
             <!-- <div class="asteroids containers"></div> -->
+            <p class="sendEmailError" id="sendEmailError"></p>
         </div>
-
-        <!-- Añade más secciones según sea necesario -->
     </div>
     <!-- Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('BbI6nrzbNjnlnQeHl')
+    </script>
+    <script src="./js/sendEmail.js"></script>
     <script src="./js/movementScroll.js"></script>
     <script src="./js/map.js"></script>
 </body>
