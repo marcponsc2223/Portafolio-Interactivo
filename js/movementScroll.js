@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     let container = document.querySelector('.container')
-    let m1 = document.getElementById('m1')
     var initialCloudsPositionX = []
     var isScrollingLeft = false 
     // let scrollTop = false
