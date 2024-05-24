@@ -90,7 +90,7 @@ function drawMap1(map, fila, columna) {
 
         document.querySelector('.trees').appendChild(trees);
         trees.style.zIndex = 100
-        trees.style.backgroundImage = 'url(../img/tree.png)';
+        trees.style.backgroundImage = 'url(./img/tree.png)';
         trees.style.backgroundSize = 'cover';
         trees.style.top = 500 + 'px';
         trees.style.left = (columna * BLOCK_SIZE) + 'px';
@@ -101,7 +101,7 @@ function drawMap1(map, fila, columna) {
         const clouds = document.createElement('div')
 
         document.querySelector('.clouds').appendChild(clouds)
-        clouds.style.backgroundImage = 'url(../img/cloud.png)'
+        clouds.style.backgroundImage = 'url(./img/cloud.png)'
         clouds.style.backgroundSize = 'cover'
         clouds.style.top = fila * BLOCK_SIZE + 'px'
         clouds.style.left = (columna * BLOCK_SIZE) + 'px'
@@ -118,7 +118,7 @@ function drawMap1(map, fila, columna) {
         document.querySelector('.grass').appendChild(grass)
         grass.style.zIndex = 2
         // grass.style.backgroundColor = '#3DD178'
-        grass.style.backgroundImage = 'url(/img/grass.png)'
+        grass.style.backgroundImage = 'url(./img/grass.png)'
         // grass.style.backgroundSize = 'cover'
         grass.style.top = 888 + 'px'
         grass.style.left = (columna * BLOCK_SIZE) + 'px'
@@ -131,7 +131,7 @@ function drawMap1(map, fila, columna) {
         const mountain = document.createElement('div')
 
         document.querySelector('.mountains').appendChild(mountain)
-        mountain.style.backgroundImage = 'url(/img/mountain.png)'
+        mountain.style.backgroundImage = 'url(./img/mountain.png)'
         mountain.style.backgroundSize = 'cover'
         mountain.style.top = fila * BLOCK_SIZE + 'px'
         mountain.style.left = (columna * BLOCK_SIZE) + 'px'
@@ -145,7 +145,7 @@ function drawMap1(map, fila, columna) {
 
         document.querySelector('.portals').appendChild(portal)
         portal.style.zIndex = 0
-        portal.style.backgroundImage = 'url(/img/portal2.gif)';
+        portal.style.backgroundImage = 'url(./img/portal2.gif)';
         portal.style.backgroundSize = 'cover';
         portal.style.top = fila * BLOCK_SIZE + 'px';
         portal.style.left = (columna * BLOCK_SIZE) + 'px';
@@ -162,7 +162,7 @@ function drawMap2(map, fila, columna) {
         document.querySelector('.moon').appendChild(groundBlock)
         groundBlock.classList.add('suelo')
         groundBlock.style.zIndex = 1
-        groundBlock.style.backgroundImage = 'url(/img/moon.jpg)'
+        groundBlock.style.backgroundImage = 'url(./img/moon.jpg)'
         // groundBlock.style.backgroundColor = '#E2A23E'
         groundBlock.style.top = fila * BLOCK_SIZE + 'px'
         groundBlock.style.left = (columna * BLOCK_SIZE) + 'px'
@@ -175,7 +175,7 @@ function drawMap2(map, fila, columna) {
 
         document.querySelector('.asteroids').appendChild(asteroids)
         asteroids.style.zIndex = 2
-        asteroids.style.backgroundImage = 'url(/img/asteroid.svg)'
+        asteroids.style.backgroundImage = 'url(./img/asteroid.svg)'
         asteroids.style.backgroundSize = 'cover'
         asteroids.style.top = fila * BLOCK_SIZE + 'px'
         asteroids.style.left = (columna * BLOCK_SIZE) + 'px'
@@ -222,7 +222,7 @@ function drawMap3(map, fila, columna) {
 
         document.querySelector('.cloudsDesert').appendChild(clouds)
         clouds.style.zIndex = 2
-        clouds.style.backgroundImage = 'url(/img/cloud.png)'
+        clouds.style.backgroundImage = 'url(./img/cloud.png)'
         clouds.style.backgroundSize = 'cover'
         clouds.style.top = fila * BLOCK_SIZE + 'px'
         clouds.style.left = (columna * BLOCK_SIZE) + 'px'
@@ -248,7 +248,7 @@ function drawMap3(map, fila, columna) {
 
         document.querySelector('.palms').appendChild(palm)
         palm.style.zIndex = 1
-        palm.style.backgroundImage = 'url(/img/palmera.png)'
+        palm.style.backgroundImage = 'url(./img/palmera.png)'
         palm.style.backgroundSize = 'cover'
         palm.style.top = fila * BLOCK_SIZE + 'px'
         palm.style.left = (columna * BLOCK_SIZE) + 'px'
@@ -262,7 +262,7 @@ function drawMap3(map, fila, columna) {
 
         document.querySelector('.piramids').appendChild(piramid)
         piramid.style.zIndex = 0
-        piramid.style.backgroundImage = 'url(/img/piramideSola.png)'
+        piramid.style.backgroundImage = 'url(./img/piramideSola.png)'
         piramid.style.backgroundSize = 'cover'
         piramid.style.top = fila * BLOCK_SIZE + 'px'
         piramid.style.left = (columna * BLOCK_SIZE) + 'px'
