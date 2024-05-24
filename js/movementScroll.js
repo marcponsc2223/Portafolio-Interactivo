@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var initialCloudsPositionX = []
     var isScrollingLeft = false 
     // let scrollTop = false
-
     // Registra la posición inicial de las nubes
     cloudsPositionX.forEach(function(x) {
         initialCloudsPositionX.push(x);

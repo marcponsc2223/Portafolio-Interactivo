@@ -1,5 +1,5 @@
 const btn = document.getElementById('button');
-let sendEmailError = document.getElementById('sendEmailError')
+var sendEmailError = document.getElementById('sendEmailError')
 document.getElementById('form')
  .addEventListener('submit', function(event) {
    event.preventDefault();
@@ -11,14 +11,21 @@ document.getElementById('form')
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Email';
-      sendEmailError.style.display = 'block'
-      sendEmailError.textContent = 'Message sent successfully.'
+      sendEmailErrorFunc('Message sent successfully.')
     }, (err) => {
-      btn.value = 'Send Email';
-      sendEmailError.textContent = 'Message has not been sent.'
+      sendEmailErrorFunc('Message has not been sent.')
     });
-    setTimeout(() => {
-        sendEmailError.style.display = 'none'
-    }, 6000);
+    hideEmailError()
 });
+
+
+function sendEmailErrorFunc(err) {
+  sendEmailError.style.display = 'block'
+  sendEmailError.textContent = err
+}
+
+function hideEmailError() {
+  setTimeout(() => {
+    sendEmailError.style.display = 'none'
+}, 6000);
+}
