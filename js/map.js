@@ -119,7 +119,7 @@ function drawMap1(map, fila, columna) {
         grass.style.zIndex = 2
         // grass.style.backgroundColor = '#3DD178'
         grass.style.backgroundImage = 'url(./img/grass.png)'
-        // grass.style.backgroundSize = 'cover'
+        grass.style.backgroundSize = 'contain'
         grass.style.top = 888 + 'px'
         grass.style.left = (columna * BLOCK_SIZE) + 'px'
         grass.style.width =  GRASS_WIDTH + '%'
