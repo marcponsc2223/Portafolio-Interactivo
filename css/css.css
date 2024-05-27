@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+
 .texto-trispace {
     color: #DB2E23;
     font-weight: 100;
@@ -376,7 +378,6 @@ body, html {
     top: -390px;
     position: relative;
 }
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
 
 :root {
   --form-bg: #f8f4e5;
