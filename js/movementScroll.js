@@ -71,7 +71,7 @@ function collisionCharacterWithForm() {
             character.offsetTop <= formContact.offsetTop + formContact.offsetHeight
         ) {
             console.log('animationStart');
-            formContact.style.animation = 'fall 1.5s ease-in-out forwards'
+            formContact.style.animation = 'fall 0.9s ease-in-out forwards'
             formContact.addEventListener('animationend', function() {
                 document.body.classList.add('shake');
                 setTimeout(function() {

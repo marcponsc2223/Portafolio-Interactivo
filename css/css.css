@@ -461,33 +461,18 @@ body.shake {
     animation: shake 0.5s ease-in-out;
   }
   
-@keyframes fall {
+  @keyframes fall {
     0% {
-      top: -730px;
-      transform: rotate3d(1, 1, 1, -360deg);
+        top: -730px;
     }
-    20% {
-      top: -600px;
-      transform: rotate3d(1, 1, 1, -300deg);
-    }
-    40% {
-      top: -400px;
-      transform: rotate3d(1, 1, 1, -240deg);
-    }
-    60% {
-      top: -200px;
-      transform: rotate3d(1, 1, 1, -180deg);
-    }
-    80% {
-      top: 0px;
-      transform: rotate3d(1, 1, 1, -120deg);
-    }
+    /* 60% {
+        top: -100px;
+    } */
     100% {
-      top: 260px;
-      opacity: 1;
-      transform: rotate3d(1, 1, 1, -16deg);
+        top: 260px;
+        opacity: 1;
     }
-  }
+}
 @keyframes shake {
     0% {
         transform: translate(0, 0);
